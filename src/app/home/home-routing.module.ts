@@ -32,6 +32,10 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'up',
+    loadChildren: () => import('./sing in/up/up.module').then( m => m.UpPageModule)
   }
 ];
 
