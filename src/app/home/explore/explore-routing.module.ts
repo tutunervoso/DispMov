@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     component: ExplorePage
   },
-  {
+  /*{
     path: 'feed',
     loadChildren: () => import('../feed/feed.module').then( m => m.FeedPageModule)
   },
@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
-  }
+  }*/
 ];
 
 @NgModule({
