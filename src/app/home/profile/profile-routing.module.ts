@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     component: ProfilePage
   },
-  {
+  /*{
     path: 'feed',
     loadChildren: () => import('../feed/feed.module').then( m => m.FeedPageModule)
   },
@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'likes',
     loadChildren: () => import('../likes/likes.module').then( m => m.LikesPageModule)
-  },
+  },*/
 ];
 
 @NgModule({
