@@ -7,6 +7,18 @@ const routes: Routes = [
   {
     path: '',
     component: ExplorePage
+  },
+  {
+    path: 'feed',
+    loadChildren: () => import('../feed/feed.module').then( m => m.FeedPageModule)
+  },
+  {
+    path: 'likes',
+    loadChildren: () => import('../likes/likes.module').then( m => m.LikesPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
   }
 ];
 
