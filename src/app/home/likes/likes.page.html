@@ -1,10 +1,52 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Curtidas</ion-title>
+    <ion-title>Notificações
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-</ion-content>
+  <ion-segment [(ngModel)]="size">
+    <ion-segment-button value="20">
+      Todos
+    </ion-segment-button>
+  </ion-segment>
 
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-avatar>
+          <img src="https://s2.glbimg.com/5IEojOCGN6bgFV5L2K_RKB5dtvk=/e.glbimg.com/og/ed/f/original/2020/03/31/cat-4548812_960_720.jpg">
+        </ion-avatar>
+        <br><ion-label>Publicação recente de <strong>um amigo!</strong></ion-label>
+        <ion-avatar>
+          <br><img src="https://blog.casadoprodutor.com.br/wp-content/uploads/2019/03/whale-shark-PALXAM7-1180x721.jpg">
+        </ion-avatar>
+        <br><h6>Tópicos para você</h6>
+        <ion-label>Siga <strong>@animaismarinhos</strong> para receber suas notificações, fotos e muito mais!</ion-label>
+        <ion-avatar>
+          <br><img src="https://www.vivernatural.com.br/wp-content/uploads/2018/04/%D0%9F%D0%B8%D0%BD%D0%B3%D0%B2%D0%B8%D0%BD-%D1%84%D0%BE%D1%82%D0%BE-min.jpg">
+        </ion-avatar>  
+        <br><br><ion-label><strong>Recomendado para você</strong></ion-label>
+        <br><ion-label>Pinguim</ion-label>
+        <ion-avatar>
+          <br><img src="https://s2.static.brasilescola.uol.com.br/be/2020/12/peixe.jpg">
+        </ion-avatar>
+        <br><br><ion-label><strong>amigo</strong> seguiu<strong> uma pessoa</strong></ion-label>
+        <ion-avatar>
+          <br><img src="https://thumbs.dreamstime.com/b/os-desenhos-animados-amarelos-do-%C3%ADcone-cadeado-isolaram-se-projeto-gr-fico-isolado-da-ilustra-o-vetor-cone-149642203.jpg">
+        </ion-avatar>
+        <br><br><ion-label>Sua conta foi acessada de outro dispositivo no dia 25/04/2021. Verifique o acesso.</ion-label>
+        <ion-avatar>
+          <br><img src="https://www.revide.com.br/media/upload/noticias/2018/11/15/11/10/mico-leao-dourado.jpeg">
+        </ion-avatar>
+          <br><br><ion-label><strong>Uma pessoa</strong> seguiu você, veja quem foi!</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+
+</ion-content>
