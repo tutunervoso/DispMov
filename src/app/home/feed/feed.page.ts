@@ -12,12 +12,12 @@ type Photo = {
 export class FeedPage implements OnInit {
 
   public photos: Photo[] = [
-    {id: 123, liked: false},
-    {id: 124, liked: false},
-    {id: 125, liked: false},
-    {id: 126, liked: false},
-    {id: 127, liked: false},
-    {id: 128, liked: false},
+    {id: 2, liked: false},
+    {id: 3, liked: false},
+    {id: 4, liked: false},
+    {id: 5, liked: false},
+    {id: 7, liked: false},
+    {id: 8, liked: false},
   ]
 
   constructor() { }
