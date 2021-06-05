@@ -16,20 +16,25 @@
   </ion-row>
 -->
 
-  <ion-card>
-    <ion-item>
-      <ion-avatar class="user-avatar">
-        <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="">
-      </ion-avatar>
-      <ion-label ></ion-label>
-      <ion-input placeholder="No que está pensando?"></ion-input>
-    </ion-item>
-  </ion-card>
+  <ion-item class="item-style">
+    <ion-avatar class="user-avatar">
+      <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="">
+    </ion-avatar>
+    <ion-label></ion-label>
+    <ion-input placeholder="No que está pensando?"></ion-input>
+    <ion-button color="primary" shape="round" color="danger" >Enviar</ion-button>
+  </ion-item>
 
-  <ion-card *ngFor="let p of photos">
-    <ion-card-header>
-      <ion-row>
-        <ion-col size="auto">
+  <ion-segment [(ngModel)]="size">
+    <ion-segment-button value="20">
+      Mais recentes
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card *ngFor="let p of photos" class="card-border">
+    <ion-card-header >
+      <ion-row >
+        <ion-col size="auto" >
           <ion-avatar class="user-avatar">
             <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="">
           </ion-avatar>
@@ -40,14 +45,14 @@
             <img [src]="'https://randomuser.me/api/portraits/lego/'+p.id+'.jpg'" alt="">
           </ion-avatar>
         </ion-col>-->
-        <ion-col>
+        <ion-col >
           <ion-card-title>Usuário XYZ</ion-card-title>
           <ion-card-subtitle>Lugar</ion-card-subtitle>
         </ion-col>
       </ion-row>
     </ion-card-header>
     <ion-card-content>
-      <ion-title>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </ion-title>
+      <ion-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </ion-text>
       <ion-row>
         <ion-col size="auto">
           <ion-button fill="clear" (click)="toggleLike(p)" color="danger">
