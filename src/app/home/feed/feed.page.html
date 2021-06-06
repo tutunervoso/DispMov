@@ -6,15 +6,7 @@
 
 <ion-content>
 
-  <!--
-  <ion-row class="ion-margin">
-    <ion-col size="auto" *ngFor="let i of [4,5,6,7,8,9]">
-      <ion-avatar class="user-avatar">
-        <img [src]="'https://randomuser.me/api/portraits/women/'+i+'.jpg'" alt="">
-      </ion-avatar>
-    </ion-col>
-  </ion-row>
--->
+  
 
   <ion-item class="item-style">
     <ion-avatar class="user-avatar">
@@ -34,19 +26,13 @@
   <ion-card *ngFor="let p of photos" class="card-border">
     <ion-card-header >
       <ion-row >
-        <ion-col size="auto" >
-          <ion-avatar class="user-avatar">
-            <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="">
-          </ion-avatar>
-        </ion-col>
-        <!-- caso queiram deixar fotos diferentes
-        <ion-col size="auto">
+                <ion-col size="auto">
           <ion-avatar class="user-avatar">
             <img [src]="'https://randomuser.me/api/portraits/lego/'+p.id+'.jpg'" alt="">
           </ion-avatar>
-        </ion-col>-->
+        </ion-col>
         <ion-col >
-          <ion-card-title>Usuário XYZ</ion-card-title>
+          <ion-card-title>Users</ion-card-title>
           <ion-card-subtitle>Lugar</ion-card-subtitle>
         </ion-col>
       </ion-row>
