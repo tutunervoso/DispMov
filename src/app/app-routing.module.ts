@@ -11,6 +11,7 @@ const routes: Routes = [
     redirectTo: 'home/feed',
     pathMatch: 'full'
   },
+
   {
     path: 'main',
     loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
