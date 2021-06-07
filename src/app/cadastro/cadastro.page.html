@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>TextGram</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input size="30" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input size="30" [(ngModel)]="username"></ion-input>
+      </ion-item >
+      <ion-item>
+        <ion-label position="floating">Telefone</ion-label>
+        <ion-input size="30" [(ngModel)]="phone"></ion-input>
+      </ion-item >
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input size="30" [(ngModel)]="email"></ion-input>
+      </ion-item >
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input size="30" [(ngModel)]="senha"></ion-input>
+      </ion-item >
+      <ion-item>
+        <ion-label position="floating">Confirmar senha</ion-label>
+        <ion-input size="30" [(ngModel)]="password"></ion-input>
+      </ion-item >
+
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="12" class="ion-text-center">
+            <ion-button fill="outline" (click)="registrarSe();">Registrar-se</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
