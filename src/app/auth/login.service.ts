@@ -10,9 +10,12 @@ export class LoginService {
 
   constructor(private storage: Storage, private route: Router, private http: HttpClient) { }
 
-  public salvaDadosLocais(flag: boolean, nameUser: String){
+  public salvaDadosLocais(flag: boolean, nameUser: string, email: string, username: string, userId: string){
     this.storage.set('manterLogado',flag);
     this.storage.set('nameUser',nameUser);
+    this.storage.set('email',email);
+    this.storage.set('username',username);
+    this.storage.set('userId',userId);
   }
 
   public autenticacao(username: any, senha: any, flag: boolean){
@@ -21,8 +24,7 @@ export class LoginService {
 
     this.http.post('http://localhost:3008/auth/authenticate', {username:username,password:senha}, { headers: new HttpHeaders({'Content-type': 'application/json'})})
       .subscribe(data => {
-        console.log(data);
-        this.salvaDadosLocais(flag, data['user']['name']);
+      this.salvaDadosLocais(flag, data["user"]["name"], data["user"]["email"], data["user"]["username"], data["user"]["_id"]);
         this.redirecionaFeed();
        }, error => {
         console.log(error);

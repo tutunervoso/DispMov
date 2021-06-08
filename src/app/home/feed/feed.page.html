@@ -13,8 +13,8 @@
       <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="">
     </ion-avatar>
     <ion-label></ion-label>
-    <ion-input placeholder="No que está pensando?"></ion-input>
-    <ion-button color="primary" shape="round" color="danger" >Enviar</ion-button>
+    <ion-input placeholder="No que está pensando?" [(ngModel)]="content" ></ion-input>
+    <ion-button color="primary" shape="round" color="danger" (click)="salvaPost();">Enviar</ion-button>
   </ion-item>
 
   <ion-segment [(ngModel)]="size">
@@ -23,26 +23,25 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-card *ngFor="let p of photos" class="card-border">
+  <ion-card *ngFor="let post of posts" class="card-border">
     <ion-card-header >
       <ion-row >
                 <ion-col size="auto">
           <ion-avatar class="user-avatar">
-            <img [src]="'https://randomuser.me/api/portraits/lego/'+p.id+'.jpg'" alt="">
+            <img [src]="'https://randomuser.me/api/portraits/lego/1.jpg'" alt="">
           </ion-avatar>
         </ion-col>
         <ion-col >
-          <ion-card-title>Users</ion-card-title>
-          <ion-card-subtitle>Lugar</ion-card-subtitle>
+          <ion-card-title>{{post.username}}</ion-card-title>
         </ion-col>
       </ion-row>
     </ion-card-header>
     <ion-card-content>
-      <ion-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </ion-text>
+      <ion-text>{{post.content}}</ion-text>
       <ion-row>
         <ion-col size="auto">
-          <ion-button fill="clear" (click)="toggleLike(p)" color="danger">
-            <ion-icon slot="icon-only" [name]="'heart' + (p.liked? '' : '-outline')"></ion-icon>
+          <ion-button fill="clear" color="danger">
+            <ion-icon slot="icon-only"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col size="auto">

@@ -22,7 +22,6 @@ export class AuthPage implements OnInit {
 
    public async verificaLogin(){
     this.flag = await this.loginSv.recuperaFlagLogin();
-    console.log(this.flag);
     this.manterLogado = this.flag;
     if(this.flag){
       this.loginSv.redirecionaFeed();
