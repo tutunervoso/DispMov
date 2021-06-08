@@ -12,7 +12,7 @@
     <ion-router-outlet id="nome-do-conteudo"></ion-router-outlet>
     <ion-row class="ion-align-items-center ion-margin">
       <ion-col>
-        <h2><strong>Alex Silva</strong></h2>
+        <h2><strong>{{name}}</strong></h2>
       </ion-col>
       <ion-col>
       </ion-col>
@@ -39,8 +39,8 @@
   </ion-card>    
 
   <div class="ion-margin">
-    <h3><strong>Alex Pereira da Silva</strong></h3>
-    <p>@alex_silva</p>
+    <h3><strong>{{name}}</strong></h3>
+    <p>@{{username}}</p>
     <h5>Conta que uso para postar fotos dos meus cachorros.</h5>
     <p>Entrou em abril de 2021</p>
   </div>
@@ -51,125 +51,22 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-card class="list-style">
-    <ion-list>
-     <ion-row class="ion-align-items-center" > 
-       <ion-col size="auto" >
-         <ion-avatar class="user-avatar">
-           <img src="https://saude.abril.com.br/wp-content/uploads/2018/12/cachorro-livro.png" alt="">
-         </ion-avatar>
-       </ion-col>
-       <ion-col>
-         <ion-text>@alex_silva publicou uma foto no dia 01/06/2021</ion-text>
-       </ion-col>
-     </ion-row>
- 
-     <ion-row class="ion-align-items-center">
-      <ion-col size="auto" > 
-      </ion-col>
-      <ion-col>
-      <img src="https://www.correiodopovo.com.br/image/policy:1.549573:1610037025/cachorrotatuadoALS01.JPG.JPG?a=1%3A1&$p$a=20407fd">
-      </ion-col>
-     </ion-row>
- 
-     <ion-row class="ion-align-items-center">
-       <ion-col size="auto" >
-         <ion-avatar class="user-avatar">
-           <img src="https://saude.abril.com.br/wp-content/uploads/2018/12/cachorro-livro.png" alt="">
-         </ion-avatar>
-       </ion-col>
-       <ion-col>
-         <ion-text>@alex_silva publicou um texto no dia 23/05/2021</ion-text>
-       </ion-col>
-     </ion-row>
- 
-     <ion-row class="ion-align-items-center">
-       <ion-col size="auto" > 
-       </ion-col>
-       <ion-col>
-         <ion-text>Hoje está um ótimo dia para levar seu melhor amigo para passear. Tomara que não chova hahaha.</ion-text>
-       </ion-col>
-     </ion-row>
-
-      <ion-row class="ion-align-items-center" > 
-        <ion-col size="auto" >
+  <ion-card *ngFor="let post of posts" class="card-border">
+    <ion-card-header >
+      <ion-row >
+                <ion-col size="auto">
           <ion-avatar class="user-avatar">
-            <img src="https://saude.abril.com.br/wp-content/uploads/2018/12/cachorro-livro.png" alt="">
+            <img [src]="'https://saude.abril.com.br/wp-content/uploads/2018/12/cachorro-livro.png'" alt="">
           </ion-avatar>
         </ion-col>
-        <ion-col>
-          <ion-text>@alex_silva publicou uma foto no dia 04/05/2021</ion-text>
+        <ion-col >
+          <ion-card-title>@{{post.username}}</ion-card-title>
         </ion-col>
       </ion-row>
-  
-      <ion-row class="ion-align-items-center">
-       <ion-col size="auto" > 
-       </ion-col>
-       <ion-col>
-       <img src="https://dogfood.guru/wp-content/uploads/2015/08/Pomeranian-On-White-03.jpg">
-       </ion-col>
-      </ion-row>
-
-      <ion-row class="ion-align-items-center" > 
-        <ion-col size="auto" >
-          <ion-avatar class="user-avatar">
-            <img src="https://saude.abril.com.br/wp-content/uploads/2018/12/cachorro-livro.png" alt="">
-          </ion-avatar>
-        </ion-col>
-        <ion-col>
-          <ion-text>@alex_silva publicou uma foto no dia 28/04/2021</ion-text>
-        </ion-col>
-      </ion-row>
-  
-      <ion-row class="ion-align-items-center">
-       <ion-col size="auto" > 
-       </ion-col>
-       <ion-col>
-       <img src="https://cdn.autopapo.com.br/box/uploads/2018/09/17180023/cachorro-1.jpg">
-       </ion-col>
-      </ion-row>
-
-      <ion-row class="ion-align-items-center" > 
-        <ion-col size="auto" >
-          <ion-avatar class="user-avatar">
-            <img src="https://saude.abril.com.br/wp-content/uploads/2018/12/cachorro-livro.png" alt="">
-          </ion-avatar>
-        </ion-col>
-        <ion-col>
-          <ion-text>@alex_silva publicou um texto no dia 28/04/2021</ion-text>
-        </ion-col>
-      </ion-row>
-  
-      <ion-row class="ion-align-items-center">
-       <ion-col size="auto" > 
-       </ion-col>
-       <ion-col>
-       <ion-text>Hoje conseguimos mais um pra familia. Vou publicar a foto logo em seguida.</ion-text>
-       </ion-col>
-      </ion-row>
-
-      <ion-row class="ion-align-items-center" > 
-        <ion-col size="auto" >
-          <ion-avatar class="user-avatar">
-            <img src="https://saude.abril.com.br/wp-content/uploads/2018/12/cachorro-livro.png" alt="">
-          </ion-avatar>
-        </ion-col>
-        <ion-col>
-          <ion-text>@alex_silva publicou um texto no dia 20/04/2021</ion-text>
-        </ion-col>
-      </ion-row>
-  
-      <ion-row class="ion-align-items-center">
-       <ion-col size="auto" > 
-       </ion-col>
-       <ion-col>
-       <ion-text>Alex Silva entrou para o TextGram.</ion-text>
-       </ion-col>
-      </ion-row>
-    
-     
- 
-    </ion-list>
-   </ion-card>  
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>{{post.content}}</ion-text>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

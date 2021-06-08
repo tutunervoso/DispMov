@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -8,11 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class FeedService {
 
-  constructor(private storage: Storage, private route: Router, private http: HttpClient) { }
-
-  public recuperaDadosLocais(){
-    
-  }
+  constructor( private route: Router, private http: HttpClient) { }
 
   public salvarPost(content: any, username: any, userId: any, name: any, email: any){
 

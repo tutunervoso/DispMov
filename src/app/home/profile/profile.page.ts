@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
+import { ProfileService } from './profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,10 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
-  public size = 4;
-  constructor() { }
+  public content = '';
+  public username = '';
+  public userId = '';
+  public name = '';
+  public email = '';
+  public posts = [];
 
-  ngOnInit() {
+  public size = 4;
+  constructor(private storage: Storage, private feedSv: ProfileService) { }
+
+  async ngOnInit() {
+    await this.storage.create();
+    this.username = await this.storage.get('username');
+    this.userId = await this.storage.get('userId');
+    this.name = await this.storage.get('nameUser');
+    this.email = await this.storage.get('email');
+
+    this.recuperaPosts();
+  }
+
+  public recuperaPosts(){
+    this.feedSv.recuperaPostsPerfil(this.userId)
+    .subscribe(data => {
+        console.log(data);
+        this.posts = data['posts'];
+      }, error => {
+        console.log(error);
+    });
   }
 
 }
